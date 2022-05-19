@@ -11,7 +11,7 @@ const typeDefs = gql`
 
   type Book {
     bookId: ID
-    author: [String] // this is an array of strings?
+    author: [{String!}!] // this is an array of strings?
     description: String
     title: String
     image: Int // need to know how to use an image

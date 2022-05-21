@@ -33,13 +33,40 @@ const resolvers = {
             return { token, user };
         },
         addUser: async (parent, args) => {
+            const user = await User.create(args);
+            const token = signToken(user);
 
+            return { token, user };
         },
         saveBook: async (parent, args, context) => {
+            if (context.user) {
+                const book = await Book.create({ ...args, username: context.user.username});
 
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { books: book._id } },
+                    { new: true }
+                );
+
+                return book;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
         },
         removeBook: async (parent, args, context) => {
+            if (context.user) {
+                const book = await Book.destroy({ ...args, username: context.user.username});
 
+                await User.findByIdAndDelete(
+                    { _id: context.user._id },
+                    { $push: { books: book._id } },
+                    { new: true }
+                );
+
+                return book;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
         }
     }
 }

@@ -35,16 +35,11 @@ const SignupForm = () => {
       });
 
       console.log(data);
+
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
-
-    // setUserFormData({
-    //   username: '',
-    //   email: '',
-    //   password: '',
-    // });
   };
 
   return (

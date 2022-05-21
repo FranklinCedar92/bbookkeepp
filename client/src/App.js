@@ -4,7 +4,6 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar'; 
 import Login from './components/LoginForm';
-import Navbar from './components/Navbar';
 import Signup from './components/SignupForm';
 
 import {

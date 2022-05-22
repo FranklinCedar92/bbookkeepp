@@ -4,7 +4,7 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        me: async (parent, args, contect) => {
+        me: async (parent, args, context) => {
             if (context.user) {
                 const userData = await User.findOne({})
                     .select('-__v -password')
@@ -16,7 +16,7 @@ const resolvers = {
         }
     },
     Mutation: {
-        loginUser: async (parent, { email, password }) => {
+        login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
 
             if (!user) {
@@ -69,4 +69,6 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         }
     }
-}
+};
+
+module.exports = resolvers;

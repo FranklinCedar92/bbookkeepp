@@ -7,6 +7,7 @@ Bbookkeepp is an app that uses the Google Books API to create a personal collect
 After Mongoose (mongod and mongo) have been started in the terminal, start the app by running 'npm run develop' in the root directory.
 
 ## Screenshot
+[Homepage](./client/public/bbookkeepp.png)
 
 ## Links
 [Heroku]()

@@ -6,7 +6,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 
 import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API';
-import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+import { savedBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
   // create state for holding returned google api data
@@ -129,7 +129,7 @@ const SearchBooks = () => {
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      //disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
+                      disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
                       className='btn-block btn-info'
                       onClick={() => handleSaveBook(book.bookId)}>
                       {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)

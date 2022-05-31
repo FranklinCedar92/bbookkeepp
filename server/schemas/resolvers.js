@@ -5,9 +5,9 @@ const { update } = require('../models/User');
 
 const resolvers = {
     Query: {
-        me: async (parent, args, context) => {
+        user: async (parent, {username}, context) => {
             if (context.user) {
-                const userData = await User.findOne({})
+                const userData = await User.findOne({username})
                     .select('-__v -password')
                     //.populate('books');
             return userData;

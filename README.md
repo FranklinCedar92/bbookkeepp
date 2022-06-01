@@ -4,7 +4,7 @@
 Bbookkeepp is an app that uses the Google Books API to create a personal collections of books. This project took an app that used a RESTful API and converted it into a GraphQL application.
 
 ## Usage
-After Mongoose (mongod and mongo) have been started in the terminal, start the app by running 'npm run develop' in the root directory.
+After Mongoose (mongod and mongo) have been started in the terminal, start the app by running 'npm run develop' in the root directory. This application is an SPA that uses a MERN stack. The APIs are written with GraphQL. 
 
 ## Screenshot
 [Homepage](./client/public/bbookkeeppSS.png)

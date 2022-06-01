@@ -10,11 +10,12 @@ After Mongoose (mongod and mongo) have been started in the terminal, start the a
 [Homepage](./client/public/bbookkeeppSS.png)
 
 ## Links
-[Heroku]()
+[Heroku](https://sleepy-gorge-84520.herokuapp.com/)
 
 ## Contact
 Feel free to contact me with any questions or recommendations at franklin.c.brown@gmail.com
 
 ## About
+Franklin generally doesn't know what he's doing. Maybe you can tell! He lives in San Francisco, likes the gym and farming, and does too much.
 
 
